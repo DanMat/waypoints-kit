@@ -17,7 +17,7 @@ import type { TravelData } from '@danmat/waypoints-core';
 export function TravelLog({ data }: { data: TravelData }) {
   return (
     <>
-      <StatTiles stats={data.stats} />
+      <StatTiles data={data} />
       <WorldMap places={data.places} />
       <FunFacts stats={data.stats} />
       <PlaceList places={data.places} />

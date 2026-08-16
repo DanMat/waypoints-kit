@@ -304,3 +304,98 @@ footer {
 	font-size: 0.82rem;
 	color: var(--muted);
 }
+
+/* Clickable stat tiles → detail modal */
+button.stat {
+	width: 100%;
+	font: inherit;
+	text-align: left;
+	color: inherit;
+	cursor: pointer;
+}
+.stat-clickable {
+	transition:
+		border-color 0.15s,
+		transform 0.15s;
+}
+.stat-clickable:hover {
+	border-color: var(--accent);
+	transform: translateY(-2px);
+}
+.stat-clickable:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 2px;
+}
+
+.stat-modal {
+	position: fixed;
+	inset: 0;
+	z-index: 50;
+	display: grid;
+	place-items: center;
+	padding: 1rem;
+}
+.stat-modal-backdrop {
+	position: absolute;
+	inset: 0;
+	border: none;
+	background: rgba(0, 0, 0, 0.55);
+	cursor: pointer;
+}
+.stat-modal-panel {
+	position: relative;
+	z-index: 1;
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: 14px;
+	width: 100%;
+	max-width: 420px;
+	max-height: 70vh;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+.stat-modal-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem 1.2rem;
+	border-bottom: 1px solid var(--border);
+}
+.stat-modal-head h3 {
+	margin: 0;
+	font-size: 1.05rem;
+	letter-spacing: -0.01em;
+}
+.stat-modal-count {
+	color: var(--muted);
+	font-family: var(--font-mono);
+	font-size: 0.85rem;
+	margin-left: 0.3rem;
+}
+.stat-modal-close {
+	background: none;
+	border: none;
+	color: var(--muted);
+	font-size: 1.7rem;
+	line-height: 1;
+	cursor: pointer;
+	padding: 0 0.3rem;
+}
+.stat-modal-close:hover {
+	color: var(--ink);
+}
+.stat-modal-list {
+	list-style: none;
+	margin: 0;
+	padding: 0.4rem 0;
+	overflow-y: auto;
+}
+.stat-modal-list li {
+	padding: 0.5rem 1.2rem;
+	font-size: 0.95rem;
+	border-bottom: 1px solid var(--border);
+}
+.stat-modal-list li:last-child {
+	border-bottom: none;
+}
