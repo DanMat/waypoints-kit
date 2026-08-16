@@ -1,0 +1,134 @@
+{
+  "$schema": "https://packkitlabs.github.io/create-packkit-js/packkit.schema.json",
+  "generator": "create-packkit",
+  "version": "4.3.5",
+  "preset": "monorepo",
+  "settings": {
+    "description": "Reusable Waypoints packages: the travel-log engine (@danmat/waypoints-core) and React components (@danmat/waypoints-ui)",
+    "author": "DanMat",
+    "repo": "https://github.com/DanMat/waypoints-kit",
+    "monorepo": true,
+    "packageManager": "pnpm",
+    "lint": "biome"
+  },
+  "baseline": {
+    "schemaVersion": 1,
+    "files": {
+      ".changeset/README.md": {
+        "hash": "0e16f282026359"
+      },
+      ".changeset/config.json": {
+        "hash": "042304fed7f259"
+      },
+      ".editorconfig": {
+        "hash": "1811c495930b03"
+      },
+      ".github/ISSUE_TEMPLATE/bug_report.md": {
+        "hash": "14665755d4fe69"
+      },
+      ".github/ISSUE_TEMPLATE/feature_request.md": {
+        "hash": "19ef8d724b4866"
+      },
+      ".github/PULL_REQUEST_TEMPLATE.md": {
+        "hash": "174297edf0cebd"
+      },
+      ".github/workflows/ci.yml": {
+        "hash": "09cd7e37936d08"
+      },
+      ".gitignore": {
+        "hash": "1c80582a2630b1"
+      },
+      ".npmrc": {
+        "hash": "154fbd08123dcc"
+      },
+      "AGENTS.md": {
+        "hash": "03bc4aed6396e5"
+      },
+      "CLAUDE.md": {
+        "hash": "0a3e1dac8414fa"
+      },
+      "CODE_OF_CONDUCT.md": {
+        "hash": "11130d8e94d7e7"
+      },
+      "CONTRIBUTING.md": {
+        "hash": "1d3d74c8963f45"
+      },
+      "LICENSE": {
+        "hash": "039ee69aa93db9"
+      },
+      "README.md": {
+        "hash": "10f89f3d78bf5f"
+      },
+      "SECURITY.md": {
+        "hash": "1fc69ca4db19fc"
+      },
+      "biome.json": {
+        "hash": "08e127fb8b6613"
+      },
+      "package.json": {
+        "hash": "1f949e13be0380"
+      },
+      "packages/core/package.json": {
+        "hash": "071eaa1b7bf223"
+      },
+      "packages/core/src/index.test.ts": {
+        "hash": "0c4c44cfa3ed15"
+      },
+      "packages/core/src/index.ts": {
+        "hash": "05e62c94a9b54f"
+      },
+      "packages/core/tsconfig.json": {
+        "hash": "0146dd7acc6fdf"
+      },
+      "packages/utils/package.json": {
+        "hash": "0128b2eb2c5b00"
+      },
+      "packages/utils/src/index.test.ts": {
+        "hash": "14532d9d0c577c"
+      },
+      "packages/utils/src/index.ts": {
+        "hash": "07df5dd6116b46"
+      },
+      "packages/utils/tsconfig.json": {
+        "hash": "0146dd7acc6fdf"
+      },
+      "pnpm-workspace.yaml": {
+        "hash": "0d6890e1d0c8fa"
+      },
+      "tsconfig.base.json": {
+        "hash": "100a0b5fcb4156"
+      },
+      "turbo.json": {
+        "hash": "0274c92468a17e"
+      }
+    },
+    "packageJson": {
+      "scripts": {
+        "build": "turbo build",
+        "test": "turbo test",
+        "lint": "biome lint .",
+        "lint:fix": "biome lint --write .",
+        "format": "biome format --write .",
+        "typecheck": "turbo typecheck",
+        "dev": "turbo dev",
+        "changeset": "changeset",
+        "version": "changeset version",
+        "release": "turbo build && changeset publish"
+      },
+      "dependencies": {
+        "devDependencies": {
+          "turbo": "^2.0.0",
+          "typescript": "^5.9.3",
+          "tsup": "^8.0.0",
+          "vitest": "^4.0.0",
+          "@biomejs/biome": "^2.0.0",
+          "@changesets/cli": "^2.27.0",
+          "@types/node": "^24.0.0"
+        }
+      },
+      "protectedFields": {
+        "packageManager": "pnpm@9.10.0"
+      }
+    }
+  }
+}
