@@ -1,6 +1,6 @@
 {
 	"name": "@danmat/waypoints-core",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Privacy-first travel-log engine: turn a Google Timeline export into sanitized, city-level places and stats. Browser-safe, dataset-agnostic.",
 	"keywords": [
 		"travel",
