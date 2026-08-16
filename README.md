@@ -1,23 +1,31 @@
 # waypoints-kit
 
-Reusable Waypoints packages: the travel-log engine (@danmat/waypoints-core) and React components (@danmat/waypoints-ui)
+The reusable building blocks behind [Waypoints](https://waypoints.danmat.workers.dev) —
+a privacy-first travel log built from your own location history. Two packages:
 
-## Packages
+| Package | What it is |
+| --- | --- |
+| [`@danmat/waypoints-core`](packages/core) | The engine: parse a Google Timeline export → sanitized, city-level places + stats. Browser-safe, dataset-agnostic, zero deps. |
+| [`@danmat/waypoints-ui`](packages/ui) | React components: world map, stat tiles, fun-facts band, sortable places table. |
 
-- `@waypoints-kit/core` — the core library
-- `@waypoints-kit/utils` — utilities built on `@waypoints-kit/core`
+The core is pure and synchronous, so it runs in a Web Worker in the browser
+(raw location data never leaves the device) or in CI.
 
 ## Develop
 
 ```sh
 pnpm install
-pnpm build     # build all packages (Turborepo)
-pnpm test
+pnpm build && pnpm test
 ```
 
-## Continuous integration
+## Releasing
 
-The `CI` workflow runs typecheck, lint, tests, and build on every push. It installs from a committed lockfile — so after creating the repo, run `pnpm install` and commit the generated `pnpm-lock.yaml`. Until then CI fails on the install step with a missing-lockfile error (expected on a brand-new repo).
+Versioned + published to npm with **provenance** via
+[`.github/workflows/release.yml`](.github/workflows/release.yml), using npm
+**Trusted Publishing (OIDC)** — no `NPM_TOKEN` stored. Bump the package
+versions, then run the Release workflow (manually or by pushing a `v*` tag).
+Each package must list this repo + `release.yml` as a trusted publisher on
+npmjs.com.
 
 ## License
 

@@ -1,0 +1,31 @@
+name: Release
+
+# Publishes @danmat/waypoints-core and @danmat/waypoints-ui to npm with
+# provenance. Uses npm Trusted Publishing (OIDC) — no NPM_TOKEN required once
+# each package lists this repo + workflow as a trusted publisher on npmjs.com.
+# Bump the package versions first, then run this (manually or by pushing a v* tag).
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+  id-token: write # required for npm provenance + Trusted Publishing
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: 'pnpm'
+          registry-url: 'https://registry.npmjs.org'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      # Publishes every non-private package whose version isn't yet on npm.
+      - run: pnpm -r publish --access public --no-git-checks --provenance
